@@ -2,19 +2,32 @@
   "name": "gsleep",
   "version": "1.0.0",
   "description": "super simple and lightweight sleep which is a replacement for `setTimeout`",
-  "files": ["dist/*"],
+  "files": [
+    "dist/*"
+  ],
   "module": "dist/index.esm.js",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "build": "node build.js"
+    "build": "node build.js",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepublishOnly": "pnpm run lint",
+    "preversion": "pnpm run lint",
+    "version": "pnpm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
-  "keywords": ["sleep"],
+  "keywords": [
+    "sleep"
+  ],
   "author": "bornikfik",
   "license": "MIT",
   "devDependencies": {
     "esbuild": "^0.18.17",
     "npm-dts": "^1.3.12",
+    "prettier": "^3.0.0",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^5.1.6"
   }
 }
