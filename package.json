@@ -1,6 +1,6 @@
 {
   "name": "gsleep",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "super simple and lightweight sleep which is a replacement for `setTimeout`",
   "files": [
     "dist/*"
